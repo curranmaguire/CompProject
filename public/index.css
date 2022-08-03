@@ -1,0 +1,15 @@
+:root {
+  --main-color: #ffc107;
+}
+
+.bg-main-color {
+  background-color: var(--main-color);
+}
+
+button.nav-link {
+  color: black !important;
+}
+button.nav-link.active {
+  color: var(--main-color) !important;
+  font-weight: 700;
+}

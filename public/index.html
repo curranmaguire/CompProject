@@ -1,274 +1,606 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <!--using code from bootstrap docs-->
 
-
-
     <!-- navbar code-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary shadow-lg ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Performance Hub</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <header
+      class="navbar navbar-expand-lg navbar-light bg-main-color shadow-lg"
+    >
+      <nav class="container-xl w-100 navbar">
+        <div class="container-fluid justify-content-between w-100">
+          <a class="navbar-brand col-4" href="/">StockShop</a>
+          <a class="navbar-brand col-4 text-end" href="/admin">Admin</a>
+        </div>
+      </nav>
+    </header>
+
+    <!--container of the about us and what not-->
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Why StockShop?</h1>
+          <p class="lead text-muted">
+            Here at Stockshop we bring the stock to you! Choose the best stock
+            from the best suppliers and place an order now using the button
+            below.
+          </p>
+          <p>
+            <a href="#" class="btn bg-main-color my-2">Order Now</a>
+            <a href="#" class="btn btn-light my-2">Become a Seller</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Tabs for different sellers -->
+    <!-- Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active show"
+            id="seller1-tab"
+            data-toggle="tab"
+            data-target="#seller1"
+            type="button"
+            role="tab"
+            aria-controls="seller1"
+            aria-selected="true"
+          >
+            Seller 1
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#artistList">Artists</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="#stadiumList">our Stadiums</a> 
-              
-              </li>
-            </ul>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="seller2-tab"
+            data-toggle="tab"
+            data-target="#seller2"
+            type="button"
+            role="tab"
+            aria-controls="seller2"
+            aria-selected="false"
+          >
+            Seller 2
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="seller3-tab"
+            data-toggle="tab"
+            data-target="#seller3"
+            type="button"
+            role="tab"
+            aria-controls="seller3"
+            aria-selected="false"
+          >
+            Seller 3
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="seller1" class="tab-pane fade in active show">
+          <h3>seller1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div id="seller2" class="tab-pane fade">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col">
+                <div class="card shadow-sm">
+                  <svg
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Placeholder: Thumbnail"
+                    preserveAspectRatio="xMidYMid slice"
+                    focusable="false"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                      Thumbnail
+                    </text>
+                  </svg>
+
+                  <div class="card-body">
+                    <h6 class="text-start">Name</h6>
+                    <p class="card-text text-start">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <small class="text-muted">£10.00</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <svg
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Placeholder: Thumbnail"
+                    preserveAspectRatio="xMidYMid slice"
+                    focusable="false"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                      Thumbnail
+                    </text>
+                  </svg>
+
+                  <div class="card-body">
+                    <h6 class="text-start">Name</h6>
+                    <p class="card-text text-start">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <small class="text-muted">£10.00</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <svg
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Placeholder: Thumbnail"
+                    preserveAspectRatio="xMidYMid slice"
+                    focusable="false"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                      Thumbnail
+                    </text>
+                  </svg>
+
+                  <div class="card-body">
+                    <h6 class="text-start">Name</h6>
+                    <p class="card-text text-start">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <small class="text-muted">£10.00</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <svg
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Placeholder: Thumbnail"
+                    preserveAspectRatio="xMidYMid slice"
+                    focusable="false"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                      Thumbnail
+                    </text>
+                  </svg>
+
+                  <div class="card-body">
+                    <h6 class="text-start">Name</h6>
+                    <p class="card-text text-start">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <small class="text-muted">£10.00</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-    </nav>
-
-      <!--container of the about us and what not-->
-    <div class="container" >
-        <hr >
-        <div class="row ">
-            <div class="col-md-7">
-            <h2 class="featurette-heading">What We Do. <span class="text-muted">Our Uses and Our Goal.</span></h2>
-            <p class="lead">We hope to make everyones enjoyment of live music easier and better with a database of artists and all their top hits. we plan to link the world of personal music listening with the world of live entertainment.</p>
-            </div>
-            <div class="col-md-5">
-                <img src="resources/T2sumIMG.jpeg" alt="Couldn't Load Image" class="w-100">
-            </div>
+        <div id="seller3" class="tab-pane fade">
+          <h3>Seller 3</h3>
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam.
+          </p>
         </div>
-        <hr>
+      </div>
     </div>
 
+    <!--footer -->
+    <br /><br /><br /><br />
     <div class="shadow-lg">
       <div class="container-fluid bg-primary">
-          <hr>
-          <h2>Artists and Their Songs</h2>
-          <hr>
+        <hr />
+        <h2>Artists and Their Songs</h2>
+        <hr />
       </div>
     </div>
     <!--artst selection code-->
-    <div class="container-fluid row">
+    <!-- <div class="container-fluid row">
         <div class="card col">
-            <ul class="list-group list-group-flush" id="artistList" >
+          <ul class="list-group list-group-flush" id="artistList" >
               
-            </ul>
-            
+          </ul>
+          
         </div>
-    
+        
       <div class="card col">
         <ul class="list-group list-group-flush" id="songList"">
         </ul>
       </div>
-    </div>   
-    
+    </div>    -->
+
     <!--artist display code-->
 
     <div class="container-fluid row">
       <div class="col">
-      <ul class="list-group">
-        <li class="list-group-item-dark" id="artistName"></li>
-        <li class="list-group-item" id="artistDob"></li>
-        <li class="list-group-item" id="artistSongs"></li>
-        
-      </ul>
+        <ul class="list-group">
+          <li class="list-group-item-dark" id="artistName"></li>
+          <li class="list-group-item" id="artistDob"></li>
+          <li class="list-group-item" id="artistSongs"></li>
+        </ul>
       </div>
       <div class="col">
         <ul class="list-group">
           <li class="list-group-item-dark" id="songName"></li>
           <li class="list-group-item" id="songLength"></li>
           <li class="list-group-item" id="songArtists"></li>
-          
         </ul>
-        </div>
+      </div>
     </div>
-
 
     <!--stadiums and what artists will perform here-->
-    <div class="container-fluid bg-primary shadow-lg ">
-        <hr>
-            <div class="container row">
-                <h2>stadiums and Their performers</h2>
-            </div>        
-        <hr>
+    <div class="container-fluid bg-primary shadow-lg">
+      <hr />
+      <div class="container row">
+        <h2>stadiums and Their performers</h2>
+      </div>
+      <hr />
     </div>
-    <hr>
+    <hr />
     <div class="container">
-      <ul class="list-group list-group-flush" id="stadiumList">
-        
-      </ul>
+      <ul class="list-group list-group-flush" id="stadiumList"></ul>
       <div class="container">
-        <hr >
-        <div class="row ">
-            <div class="col-md-7">
+        <hr />
+        <div class="row">
+          <div class="col-md-7">
             <h2 class="featurette-heading" id="stadiumName">The O2 arena.</h2>
-            <p id="stadiumAbout" class="lead">We hope to make everyones enjoyment of live music easier and better with a database of artists and all their top hits. we plan to link the world of personal music listening with the world of live entertainment.</p>
-            </div>
-            <div class="col-md-5">
-                <img src="resources/T2sumIMG.jpeg" alt="Couldn't Load Image" class="w-100" id="stadiumImg">
-            </div>
+            <p id="stadiumAbout" class="lead">
+              We hope to make everyones enjoyment of live music easier and
+              better with a database of artists and all their top hits. we plan
+              to link the world of personal music listening with the world of
+              live entertainment.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <img
+              src="resources/T2sumIMG.jpeg"
+              alt="Couldn't Load Image"
+              class="w-100"
+              id="stadiumImg"
+            />
+          </div>
         </div>
-        <hr>
-    </div>
-
+        <hr />
+      </div>
     </div>
     <div class="container">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-          </ul>
-          <p class="text-center text-muted">© 2021 Company, Inc</p>
-        </footer>
-      </div>
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-muted">About</a>
+          </li>
+        </ul>
+        <p class="text-center text-muted">© 2021 Company, Inc</p>
+      </footer>
+    </div>
 
+    <!-- Modal to add to artist dataset-->
 
-                 <!-- Modal to add to artist dataset-->
+    <div
+      class="modal fade"
+      id="addArtist"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="false"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Add a item to our database
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
-
-<div class="modal fade" id="addArtist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add a item to our database</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      
-      <div class="modal-body">
-        <p>Name of new Artist</p>
-        <div class="input-group">
-          
-          <input type="text" aria-label="artist-name" id="artistFormName" class="form-control">
+          <div class="modal-body">
+            <p>Name of new Artist</p>
+            <div class="input-group">
+              <input
+                type="text"
+                aria-label="artist-name"
+                id="artistFormName"
+                class="form-control"
+              />
+            </div>
+            <!--on toggles use js to add chheck boxes into modal to create the form on click of ok push to database and add to list of items.-->
+            <p>Date Of Birth of New Artist (in form dd/mm/yyyy)</p>
+            <div class="input-group">
+              <input
+                type="date"
+                aria-label="artist-dob"
+                id="artistFormDob"
+                class="form-control"
+              />
+            </div>
+            <br />
+            <p>Add the stadium the artist will be playing at</p>
+            <select
+              class="form-select"
+              aria-label="song-select"
+              id="artistFormStadium"
+            >
+              <option selected="">Open this select menu</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="addArtist()"
+              data-dismiss="modal"
+            >
+              add artist
+            </button>
+          </div>
         </div>
-        <!--on toggles use js to add chheck boxes into modal to create the form on click of ok push to database and add to list of items.-->
-        <p>Date Of Birth of New Artist (in form dd/mm/yyyy)</p>
-        <div class="input-group">
-          
-          <input type="date" aria-label="artist-dob" id="artistFormDob" class="form-control">
-        </div><br>
-        <p>Add the stadium the artist will be playing at</p>
-        <select class="form-select" aria-label="song-select" id="artistFormStadium">
-          <option selected="">Open this select menu</option>
-          
-        </select>
-      </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="addArtist()" data-dismiss="modal">add artist</button>
       </div>
     </div>
-  </div>
-</div>
 
-<!--     modal to add songs           -->
-<div class="modal fade" id="addSong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add a item to our database</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Name of new Song</p>
-        <div class="input-group">
-          
-          <input type="text" aria-label="song-name" id="songFormName" class="form-control">
+    <!--     modal to add songs           -->
+    <div
+      class="modal fade"
+      id="addSong"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="false"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Add a item to our database
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Name of new Song</p>
+            <div class="input-group">
+              <input
+                type="text"
+                aria-label="song-name"
+                id="songFormName"
+                class="form-control"
+              />
+            </div>
+            <!--on toggles use js to add chheck boxes into modal to create the form on click of ok push to database and add to list of items.-->
+            <p>Length of song</p>
+            <div class="input-group">
+              <input
+                type="time"
+                aria-label="song-length"
+                id="songFormLength"
+                class="form-control"
+              />
+            </div>
+            <br />
+            <p>Who plays it?</p>
+            <select
+              class="form-select"
+              aria-label="song-select"
+              id="songFormSelect"
+            >
+              <option selected="">Open this select menu</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="addSong()"
+              data-dismiss="modal"
+            >
+              add Song
+            </button>
+          </div>
         </div>
-        <!--on toggles use js to add chheck boxes into modal to create the form on click of ok push to database and add to list of items.-->
-        <p>Length of song</p>
-        <div class="input-group">
-          
-          <input type="time" aria-label="song-length" id="songFormLength" class="form-control">
-        </div><br>
-        <p>Who plays it?</p>
-        <select class="form-select" aria-label="song-select" id="songFormSelect">
-          <option selected="">Open this select menu</option>
-          
-        </select>
-      </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="addSong()" data-dismiss="modal">add Song</button>
       </div>
     </div>
-  </div>
-</div>
 
-<!--     modal to add stadiums           -->
-<div class="modal fade" id="addStadium" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add a item to our database</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Name of new Stadium</p>
-        <div class="input-group">
-          
-          <input type="text" aria-label="" id="stadiumFormName" class="form-control">
-        </div>
-        <p>add an image url</p>
-        <div class="input-group">
-          
-          <input type="text" aria-label="" id="stadiumFormUrl" class="form-control">
-        </div>
-        <!--on toggles use js to add chheck boxes into modal to create the form on click of ok push to database and add to list of items.-->
-        <p>About the stadium</p>
-        <div class="input-group">
-          
-          <input type="text" aria-label="" id="stadiumFormAbout" class="form-control">
-        </div><br>
+    <!--     modal to add stadiums           -->
+    <div
+      class="modal fade"
+      id="addStadium"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="false"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Add a item to our database
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Name of new Stadium</p>
+            <div class="input-group">
+              <input
+                type="text"
+                aria-label=""
+                id="stadiumFormName"
+                class="form-control"
+              />
+            </div>
+            <p>add an image url</p>
+            <div class="input-group">
+              <input
+                type="text"
+                aria-label=""
+                id="stadiumFormUrl"
+                class="form-control"
+              />
+            </div>
+            <!--on toggles use js to add chheck boxes into modal to create the form on click of ok push to database and add to list of items.-->
+            <p>About the stadium</p>
+            <div class="input-group">
+              <input
+                type="text"
+                aria-label=""
+                id="stadiumFormAbout"
+                class="form-control"
+              />
+            </div>
+            <br />
 
-        <p>Who plays there? Put that in on the artist adder</p>
-        
-      </div>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="addStadium()" data-dismiss="modal">add Stadium</button>
+            <p>Who plays there? Put that in on the artist adder</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="addStadium()"
+              data-dismiss="modal"
+            >
+              add Stadium
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
 
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
-<script src="script.js"></script>
-
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
