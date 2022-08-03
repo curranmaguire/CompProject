@@ -1,0 +1,6 @@
+unzip folder
+open up cmd on folder location
+install all packages with "npm i"
+run server.js file using "node server.js
+wait for terminal to say database connected
+navigate to local host 4000 on your browser
