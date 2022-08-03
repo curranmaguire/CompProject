@@ -1,27 +1,29 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Artist = new Schema({
+const Seller = new Schema({
   name: String,
-  dob: String,
-  songs: [{ type: Schema.Types.ObjectId, ref: "Song" }],
-  stadium: { type: Schema.Types.ObjectId, ref: "Stadium" },
+  description: String,
+  products: [{ type: Schema.Types.ObjectId, ref: "Product" }],
+  sales: [{ type: Schema.Types.ObjectId, ref: "Sale" }],
 });
 
-exports.artist = mongoose.model("Artist", Artist);
+exports.seller = mongoose.model("Seller", Seller);
 
-const Stadium = new Schema({
+const Sale = new Schema({
   name: String,
-  about: String,
-  img: String,
-  artists: [{ type: Schema.Types.ObjectId, ref: "Artist" }],
-});
-exports.stadium = mongoose.model("Stadium", Stadium);
-
-const Song = new Schema({
-  name: String,
-  length: String,
-  artist: { type: Schema.Types.ObjectId, ref: "Artist" },
+  address: String,
+  products: [{ type: Schema.Types.ObjectId, ref: "Product" }],
 });
 
-exports.song = mongoose.model("Song", Song);
+exports.sale = mongoose.model("Sale", Sale);
+
+const Product = new Schema({
+  name: String,
+  description: String,
+  price: String,
+  image: String,
+  seller: { type: Schema.Types.ObjectId, ref: "Seller" },
+});
+
+exports.product = mongoose.model("Product", Product);

@@ -18,17 +18,17 @@ app.use(express.json());
 // app.use("/static", express.static(path.join(__dirname, "public")));
 app.use(express.static("public"));
 //----------IMPORT ROUTES-----------
-const artistRoutes = require("./routes/artistRoutes");
-const stadiumRoutes = require("./routes/stadiumRoutes");
-const songRoutes = require("./routes/songRoutes");
+const saleRoutes = require("./routes/saleRoutes");
+const sellerRoutes = require("./routes/sellerRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 //-----------HANDLE ROUTES----------
-app.get("/artist", artistRoutes);
-app.all("/artist/*", artistRoutes);
-app.get("/stadium", stadiumRoutes);
-app.all("/stadium/*", stadiumRoutes);
-app.get("/song", songRoutes);
-app.all("/song/*", songRoutes);
+app.get("/sale", saleRoutes);
+app.all("/sale/*", saleRoutes);
+app.get("/seller", sellerRoutes);
+app.all("/seller/*", sellerRoutes);
+app.get("/product", productRoutes);
+app.all("/product/*", productRoutes);
 
 //-------------LOCAL CONNECTION------------
 const port = process.env.PORT || 4000;
