@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-
-const password = 'Curran123';
+const password = "Curran123";
 const dbname = "t2summative";
 const url =
-  "mongodb+srv://Curran:"+password+"@cluster0.ymrp7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongodb+srv://Curran:" +
+  password +
+  "@cluster0.ymrp7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-  
 const db = mongoose.connection;
 
 exports.connect = function connectDb() {
@@ -20,5 +20,3 @@ exports.connect = function connectDb() {
     console.error("connection error:", err);
   });
 };
-
-
