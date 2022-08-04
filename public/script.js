@@ -13,41 +13,124 @@ triggerTabList.forEach((triggerEl) => {
   });
 });
 
-//---------------------------------------------artist funcitons---------------------
-function createList(dataLocation, targetList) {
-  let element = document.getElementById(targetList);
-  let url = "http://localhost:4000" + dataLocation;
+//---------------------------------------------Sellers funcitons---------------------
+
+//get request that creates lsit elements from returned products
+let url = "http://localhost:4000/seller";
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      data.map((item) => {
-        let li = document.createElement("li");
-        li.classList.add("list-group-item");
-        li.setAttribute("style", "cursor: pointer;");
-        li.setAttribute("id", item._id);
-        li.appendChild(document.createTextNode(item.name));
-        li.setAttribute(
-          "onclick",
-          'selectAndDisplayArtist("' + item._id + '")'
-        );
-        element.appendChild(li);
-      });
-    })
-    .then(function () {
-      let li = document.createElement("li");
-      li.classList.add("list-group-item");
-      li.setAttribute("id", "add artist");
-      li.setAttribute("style", "cursor: pointer;");
+      data.map((seller,index)=>{
+        createSeller(seller)
+        
+      }
+      )
+      })
+    
 
-      li.setAttribute("data-toggle", "modal");
-      li.setAttribute("data-target", "#addArtist");
-      li.setAttribute("type", "button");
+    
 
-      li.appendChild(document.createTextNode("+Add Artist"));
-      element.appendChild(li);
-    });
+//------------on website load populate the sellers navbar------------
+function createSeller(seller) {
+
+  //create the navbar elements for each seller
+  let  navbar = document.getElementById("sellers");
+  let li = document.createElement("li")
+  li.className = "nav-item"
+  li.setAttribute("role","presentation")
+
+  let button = document.createElement("button")
+  button.className = "nav-link"
+  button.setAttribute("id",seller._id)
+  button.setAttribute("data-toggle","tab")
+  button.setAttribute("data-target","#" + seller._id)
+  button.setAttribute("type","button")
+  button.setAttribute("role","tab")
+  button.setAttribute("aria-controls", seller._id)
+  button.setAttribute("aria-selected","true")
+  open = seller._id + "product"
+  button.onclick = function(){buttonToggle(open)}
+  button.textContent = seller.name
+  li.appendChild(button)
+  navbar.appendChild(li)
+
+    //create the products items
+
+  let   productDisplay = document.getElementById("products")
+  let div = document.createElement("div")
+  div.className = "tab-pane "
+  div.setAttribute("id", open)
+  if(seller.products.length == 0){
+    let h3 = document.createElement("h3")
+    h3.textContent = seller.name
+    div.appendChild(h3)
+    let p = document.createElement(p)
+    p.textContent = seller.description
+    div.appendChild(p)
+  }else{
+    let container = document.createElement("div")
+    container.className = "container"
+    let productsBody = document.createElement("div")
+      productsBody.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+    function cardCreator(product){
+      let card = document.createElement("div")
+      card.className = "col"
+      let cardBody = document.createElement("div")
+      cardBody.className = "card shadow-sm"
+      let img = document.createElement("img")
+      img.className = "card-img-top"
+      img.setAttribute("width","100%")
+      img.setAttribute("height","225")
+      img.setAttribute("src",product.image)
+      img.setAttribute("role","img")
+      img.setAttribute("aria-label","Placeholder: Thumbnail")
+      img.setAttribute("preserveAspectRatio","xMidYMid slice")
+      img.setAttribute("focusable","false")
+      let cardText = document.createElement("div")
+      cardText.className = "card-body"
+      let h6 = document.createElement("h6")
+      h6.className = "text-start"
+      h6.textContent = product.name
+      let p = document.createElement("p")
+      p.className = "card-text text-start"
+      p.textContent = product.description
+      let price = document.createElement("div")
+      price.className = "d-flex justify-content-between align-items-center"
+      let priceText = document.createElement("small")
+      priceText.className = "text-muted"
+      priceText.textContent = product.price
+      price.appendChild(priceText)
+      cardText.appendChild(h6)
+      cardText.appendChild(p)
+      cardText.appendChild(price)
+      cardBody.appendChild(img)
+      cardBody.appendChild(cardText)
+      card.appendChild(cardBody)
+      productsBody.appendChild(card)
+      container.appendChild(productsBody)
+      div.appendChild(container)
+      productDisplay.appendChild(div)
+    }
+    seller.products.forEach((product)=>cardCreator(product))
+
+    //link the buttons and products
+    
+
+  }
 }
 
+//function to hide and show items for sellers
+
+open = ""
+function buttonToggle(location,){
+  console.log(location)
+  document.getElementById(open).className = "tab-pane fade"
+  document.getElementById(location).className = "tab-pane fade active show"
+  open = location
+  }
+
+
+/*
 //artist list creation
 createList("/artist", "artistList");
 function addFormArtist() {
@@ -306,12 +389,4 @@ function selectAndDisplayStadium(item) {
     });
 }
 
-//------put out a list of stadiums
-/// when stadium clicked info a bout artists playing ther are displayed.
-//when artist is clicked their info is displayed
-//------put out a list of all music with the delected highlighted.
-//------add to all lists.
-//------document the server in twitter api style.
-//------run tests
-//------change any of the database items.
-//makee video review.
+*/

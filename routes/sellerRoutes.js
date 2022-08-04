@@ -7,7 +7,7 @@ const Model = require("../model.js");
 //---------------------GET---------------------//
 
 router.get("/seller", (req, res) => {
-  Model.seller.find({}).exec((err, docs) => {
+  Model.seller.find({}).populate("products").exec((err, docs) => {
     if (err) return res.status(500);
     res.send(docs);
   });
